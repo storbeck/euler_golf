@@ -1,2 +1,1 @@
-sub p{$i=shift;my $x;@t=split('',$i);map{$x.=$_}(reverse @t);($x eq $i)?$x:0;}
-map{$x=$_;push(@z,map{my $i=($x*$_);&p($i)}(100..999));}(100..999);@s=sort{$a<=>$b}@z;print $s[-1];
+@n=qw(10 99);map{$x=$_;push(@z,map{$i=($x*$_);(scalar reverse $i)eq$i?$i:0;}($n[0]..$n[1]));}($n[0]..$n[1]);@s=sort{$a<=>$b}@z;print $s[-1];
